@@ -1,0 +1,68 @@
+version: "3.7"
+
+services:
+  nginx:
+    image: nginx:1.17-alpine
+    restart: on-failure
+    container_name: ${APP_NAME}_nginx
+    ports:
+      - "80:80"
+    volumes:
+      - .:/var/www/html
+      - ./docker/nginx:/etc/nginx/conf.d
+    networks:
+      main_network:
+        ipv4_address: 10.0.22.10
+    depends_on:
+      - php
+
+  php:
+    build:
+      args:
+        uname: dev
+        uid: 1000
+        gid: 1000
+      context: ./docker/php
+    container_name: ${APP_NAME}_php
+    image: ${APP_NAME}_php
+    restart: on-failure
+    working_dir: /var/www/html/
+    volumes:
+      - ./docker/php/php.ini:/usr/local/etc/php/php.ini
+      - .:/var/www/html
+    environment:
+      COMPOSER_MEMORY_LIMIT: 2G
+      XDEBUG_CONFIG: client_host=10.0.21.1 client_port=9001 remote_enable=1 idekey=PHPSTORM
+      PHP_IDE_CONFIG: serverName=Docker
+    networks:
+      main_network:
+        ipv4_address: 10.0.22.11
+    depends_on:
+      - db
+
+  db:
+    image: mariadb:10.6
+    restart: on-failure
+    container_name: ${APP_NAME}_db
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_DATABASE: laravel
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_PASSWORD: secret
+      MYSQL_USER: laravel
+    ports:
+      - "3310:3306"
+    volumes:
+      - ./docker/database/dump:/var/lib/mysql
+    networks:
+      main_network:
+        ipv4_address: 10.0.22.12
+
+networks:
+  main_network:
+    driver: bridge
+    name: ${APP_NAME}_network
+    ipam:
+      driver: default
+      config:
+        - subnet: 10.0.22.0/28
