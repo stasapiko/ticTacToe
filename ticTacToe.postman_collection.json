@@ -1,0 +1,146 @@
+{
+	"info": {
+		"_postman_id": "d42e05a2-b3b4-4935-bfd3-5720fea6cbd7",
+		"name": "ticTacToe",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost/api/auth",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/api/auth",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/api?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoidGljX3RhY190b2UiLCJjcmVhdGVkQXQiOjE2NTY0NDg1ODB9.-Njr96PnZ5hr0Q88eEvDf-4UGosXZAV9SazvLE8cpJw",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/api?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoidGljX3RhY190b2UiLCJjcmVhdGVkQXQiOjE2NTY0NDg1ODB9.-Njr96PnZ5hr0Q88eEvDf-4UGosXZAV9SazvLE8cpJw",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoidGljX3RhY190b2UiLCJjcmVhdGVkQXQiOjE2NTY0NDg1ODB9.-Njr96PnZ5hr0Q88eEvDf-4UGosXZAV9SazvLE8cpJw"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/api/move?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoidGljX3RhY190b2UiLCJjcmVhdGVkQXQiOjE2NTY0NDg1ODB9.-Njr96PnZ5hr0Q88eEvDf-4UGosXZAV9SazvLE8cpJw",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "x",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "y",
+							"value": "0",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/api/move?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoidGljX3RhY190b2UiLCJjcmVhdGVkQXQiOjE2NTY0NDg1ODB9.-Njr96PnZ5hr0Q88eEvDf-4UGosXZAV9SazvLE8cpJw",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"move"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoidGljX3RhY190b2UiLCJjcmVhdGVkQXQiOjE2NTY0NDg1ODB9.-Njr96PnZ5hr0Q88eEvDf-4UGosXZAV9SazvLE8cpJw"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/api/restart?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoidGljX3RhY190b2UiLCJjcmVhdGVkQXQiOjE2NTY0NDg1ODB9.-Njr96PnZ5hr0Q88eEvDf-4UGosXZAV9SazvLE8cpJw",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://localhost/api/restart?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoidGljX3RhY190b2UiLCJjcmVhdGVkQXQiOjE2NTY0NDg1ODB9.-Njr96PnZ5hr0Q88eEvDf-4UGosXZAV9SazvLE8cpJw",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"restart"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoidGljX3RhY190b2UiLCJjcmVhdGVkQXQiOjE2NTY0NDg1ODB9.-Njr96PnZ5hr0Q88eEvDf-4UGosXZAV9SazvLE8cpJw"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/api/clear?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoidGljX3RhY190b2UiLCJjcmVhdGVkQXQiOjE2NTY0NDg1ODB9.-Njr96PnZ5hr0Q88eEvDf-4UGosXZAV9SazvLE8cpJw",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/api/clear?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoidGljX3RhY190b2UiLCJjcmVhdGVkQXQiOjE2NTY0NDg1ODB9.-Njr96PnZ5hr0Q88eEvDf-4UGosXZAV9SazvLE8cpJw",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"clear"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoidGljX3RhY190b2UiLCJjcmVhdGVkQXQiOjE2NTY0NDg1ODB9.-Njr96PnZ5hr0Q88eEvDf-4UGosXZAV9SazvLE8cpJw"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
